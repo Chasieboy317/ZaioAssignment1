@@ -1,37 +1,48 @@
+.infoHeader {
+	text-align: left;
+	margin: 8px;
+}
 .product {
 	//background-color: #666;
 }
 .productName {
 	color: #333333;
 	font: bold 30px Arial;
+	margin-bottom: 4px;
 }
 
 //review row
 .reviewHeader {
 	min-width: 300px;
+	text-align: left;
 }
 .reviewBar {
-	width: 100px;
-	font: bold 20px Arial;
+	width: 86px;
+	font: bold 26px Arial;
 	color: #333;
 	display: inline-block;
+	margin-bottom: 4px;
+	margin-left: 4px;
 }
 .reviewNumber {
-	width: 1000px;
+	width: 100px;
 	font: normal 12px Arial;
 	color: #cfcfcf;
 	display: inline-block;
+	text-align: left;
 }
 
 //price row
 .price {
 	min-width: 300px;
+	text-align: left;
 }
 .currentPrice {
 	width: 90px;
 	font: bold 20px Arial;
 	color: #c2484e;
 	display: inline-block;
+	margin-bottom: 4px;
 }
 .retailPrice {
 	width: 70px;
