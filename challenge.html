@@ -9,6 +9,27 @@
 </head>
 
 <body>
+	<script type="text/javascript">
+		var selectedButton = document.getElementById("ElectridRed");
+
+		function buttonSelect(currentID) {
+			var buttons = document.getElementsByClassName("button");
+			for (var i=0; i<buttons.length; i++) {
+				if (buttons[i].id == currentID) {
+					selectedButton=buttons[i];
+					buttons[i].style.borderColor = "black";
+					document.getElementById("colour").innerHTML = buttons[i].getAttribute("-data-name");
+				}
+				else {buttons[i].style.borderColor = "white";}
+			}
+		}
+
+		function addToCart() {
+			alert(selectedButton.id);
+		}
+
+	</script>
+
 	<div class="infoHeader">
 		<div class="product">
 			<h1 class="productName">
@@ -46,6 +67,23 @@
 			<div id="colour">
 				 Electric Red
 			</div>
+		</div>
+
+		<div class="buttons">
+			<button class="button" id="roundButton1" -data-name="green" -data-price="10" onclick="buttonSelect(this.id)">
+			</button>
+
+			<button class="button" id="roundButton2" -data-name="yellow" -data-price="20" onclick="buttonSelect(this.id)">
+			</button>
+		</div>
+
+		<div class="addToCart">
+			<p class="addToCart" id="numberColour"> 
+				0
+			</p>
+			<button class="addToCart" id="addToCartButton" onclick="addToCart()">
+				Add to Cart
+			</button>
 		</div>
 	</div>
 
