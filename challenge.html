@@ -9,113 +9,174 @@
 </head>
 
 <body>
-
-	<div class="infoHeader">
-		<div class="product">
-			<h1 class="productName">
-			HICKIES Originals
-			</h1>
-		</div>
-
-		<div class = "reviewHeader"> 
-			<div class = "reviewBar">
-			⭑⭑⭑⭑⭑
+	<div style="width:100%; height:100%; margin-left:33%; float:center">
+		<div class="infoHeader">
+			<div class="product">
+				<h1 class="productName">
+				HICKIES Originals
+				</h1>
 			</div>
-			<div class = "reviewNumber">
-			1,293 reviews	
+
+			<div class = "reviewHeader"> 
+				<div class = "reviewBar">
+				⭑⭑⭑⭑⭑
+				</div>
+				<div class = "reviewNumber">
+				1,293 reviews	
+				</div>
+			</div>
+
+			<div class = "price">
+				<div class = "currentPrice">
+				$14.99
+				</div>
+				<div class = "retailPrice">
+				$17.99
+				</div>
+				<div class = "discount">
+				25% OFF
+				</div>
+			</div>
+
+			<div class = "exclusive">
+				ONLINE EXCLUSIVE
+			</div>
+
+			<div id="colourLabel">
+				COLOR:
+				<div id="colour"></div>
+			</div>
+
+			<div>
+				<button class="button" id="roundButton1" -data-name="green" -data-price="10" onclick="ButtonSelect(this.id)"></button>
+				<button class="button" id="roundButton2" -data-name="yellow" -data-price="20" onclick="ButtonSelect(this.id)"></button>
+				<button class="button" id="roundButton3" -data-name="blue" -data-price="20" onclick="ButtonSelect(this.id)"></button>
+				<button class="button" id="roundButton4" -data-name="red" -data-price="20" onclick="ButtonSelect(this.id)"></button>
+				<button class="button" id="roundButton5" -data-name="orange" -data-price="20" onclick="ButtonSelect(this.id)"></button>
+				<button class="button" id="roundButton6" -data-name="purple" -data-price="20" onclick="ButtonSelect(this.id)"></button>
+				<p style="font: bold 11px Arial; margin:15px">Size Guide</p>
+			</div>
+
+			<div class="addToCart">
+				<p style="font: bold 11px Arial; margin: 15px;">Your Custom Fit</p>
+				<p class="addToCart" id="numberColour">0</p>
+				<button class="addToCart" id="addToCartButton" onclick="AddToCart()">Add to Cart</button>
+			</div>
+
+			<hr class="line"> </hr>
+
+			<div id="selectedColours" style="min-height: 80px;">
+				<p style="font: bold 12px Arial; margin-left: 5px; margin-top: 25px; margin-bottom: 5px;">DETAILS</p>
+			</div>
+
+			<hr class="line"> </hr>
+
+			<div>
+				<p style="font: bold 11px Arial; margin:15px">Need Help?</p>
+				<p style="font: bold 11px Arial; margin:15px">Shipping & Returns</p>
+			</div>
+
+			<div id="addColours" class = "popup">
+
+				<div class = "popup-content">
+					<p class="popup-text">Please add the quantity of the item you have selected.</p>
+					<div class = "incdec">
+						<p id="colourName"></p>
+						<button class = "plusminus" onclick="Decrement()">-</button>
+						<p id="duplicateColour">0</p>
+						<button class = "plusminus" onclick="Increment()">+</button>
+					</div>
+					<button class="choice" id="agree" onclick="Agree()">
+						<p class="popup-choice">Agree</p>
+					</button>
+					<button class="choice" id="cancel" onclick="Cancel()">
+						<p class="popup-choice">Cancel</p>
+					</button>
+					
+				</div>
 			</div>
 		</div>
-
-		<div class = "price">
-			<div class = "currentPrice">
-			$14.99
-			</div>
-			<div class = "retailPrice">
-			$17.99
-			</div>
-			<div class = "discount">
-			25% OFF
-			</div>
-		</div>
-
-		<div class = "exclusive">
-			ONLINE EXCLUSIVE
-		</div>
-
-		<div id="colourLabel">
-			COLOR:
-			<div id="colour"></div>
-		</div>
-
-		<div class="buttons">
-			<button class="button" id="roundButton1" -data-name="green" -data-price="10" onclick="buttonSelect(this.id)"></button>
-			<button class="button" id="roundButton2" -data-name="yellow" -data-price="20" onclick="buttonSelect(this.id)"></button>
-		</div>
-
-		<div class="addToCart">
-			<p class="addToCart" id="numberColour">0</p>
-			<button class="addToCart" id="addToCartButton" onclick="addToCart()">Add to Cart</button>
-		</div>
-
-		<div id="addColours" class = "popup">
-
-		<div class = "popup-content">
-			<p class="popup-text">Please add the quantity of the item you have selected.</p>
-			<div class = "incdec">
-				<p id="colourName"></p>
-				<button class = "plusminus" onclick="decrement()">-</button>
-				<p id="duplicateColour">0</p>
-				<button class = "plusminus" onclick="increment()">+</button>
-			</div>
-			<button class="choice" id="agree" onclick="closeAddToCart()">
-				<p class="popup-choice">Agree</p>
-			</button>
-			<button class="choice" id="cancel" onclick="closeAddToCart()">
-				<p class="popup-choice">Cancel</p>
-			</button>
-			
-		</div>
-	</div>
+</div>
 
 	
 
 	<script type="text/javascript">
 		var selectedButton = document.getElementById("roundButton1");
-		
 		var lastSelectedButton = selectedButton;
 		var ringColour = "black";
-
+		var itemsInCart = false;
+		var addToCartButton = document.getElementById("addToCartButton");
+		var numberColour = document.getElementById("numberColour");
 		var popup = document.getElementById("addColours");
 		var colourName = document.getElementById("colourName");
 		var duplicateColour = document.getElementById("duplicateColour");
+		var duplicateColourNum = 0;
 
-		var itemsInCart = false;
+		var selectedColours = document.getElementById("selectedColours");
 
-		function buttonSelect(currentID) {
-			lastSelectedButton = selectedButton;
-			selectedButton = document.getElementById(currentID);
+		selectedButton.style.borderColor = ringColour;
+		document.getElementById("colour").innerHTML = selectedButton.getAttribute("-data-name");
 
-			lastSelectedButton.style.borderColor = "white";
-			selectedButton.style.borderColor = ringColour;
+		function ButtonSelect(currentID) {
+			if (itemsInCart) {return;} //if the user is in the state of checking out, don't allow them to choose a colour
+			lastSelectedButton = selectedButton; //the button that will be deactivated will be the previously selected button
+			selectedButton = document.getElementById(currentID); //the button that will be activated
+
+			lastSelectedButton.style.borderColor = "white"; //deactivate the button
+			selectedButton.style.borderColor = ringColour; //activate the button
 
 			document.getElementById("colour").innerHTML = selectedButton.getAttribute("-data-name");
 		}
 
-		function addToCart() {
+		function Checkout() {
+			var copyColour = selectedButton.cloneNode(true); 
+			copyColour.style.border = "none";
+			//copyColour.onclick = null; //For some reason null assignment of the onclick function doesn't remove it's functionality ???
+			for (var i=0; i<duplicateColourNum; i++) {
+				selectedColours.appendChild(copyColour.cloneNode(true)); //make a copy of the selected colour and add it to the list of colours
+			}
+			Reset();
+		}
+
+		function AddToCart() {
+
 			popup.style.display = "block";
 			colourName.innerHTML = selectedButton.getAttribute("-data-name");
 		}
 
-		function closeAddToCart() {
+		function Agree() {
+			popup.style.display = "none";
+			if (duplicateColourNum==0) {return;}
+			itemsInCart = true;
+			addToCartButton.innerHTML = "Checkout Now";
+			numberColour.innerHTML = duplicateColourNum;
+			addToCartButton.onclick = function() {Checkout();}
+		}
+
+		function Cancel() {
 			popup.style.display = "none";
 		}
 
-		function increment() {
+		//method to increment the number of colours which will be added to the cart in the modal
+		function Increment() {
 			duplicateColour.innerHTML = parseInt(duplicateColour.innerHTML, 10)+1;
+			duplicateColourNum = parseInt(duplicateColour.innerHTML, 10);
 		}
 
-		function decrement() {
+		//method to decrement the number of colours which will be added to the cart in the modal
+		function Decrement() {
 			duplicateColour.innerHTML = parseInt(duplicateColour.innerHTML, 10) > 0 ? parseInt(duplicateColour.innerHTML, 10)-1 : 0;
+			duplicateColourNum = parseInt(duplicateColour.innerHTML, 10);
+		}
+
+		//helper method to reset all the fields of relevant elements after checking out
+		function Reset() {
+			itemsInCart = false;
+			addToCartButton.onclick = function() {AddToCart();}
+			addToCartButton.innerHTML = "Add To Cart";
+			duplicateColour.innerHTML = "0";
+			duplicateColourNum = 0;
+			numberColour.innerHTML = "0";
 		}
 
 	</script>

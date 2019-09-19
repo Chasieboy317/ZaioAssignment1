@@ -1,6 +1,5 @@
 .infoHeader {
-	text-align: center;
-	margin: 8px;
+	width: 550px;
 }
 .product {
 }
@@ -12,31 +11,25 @@
 
 /*review row*/
 .reviewHeader {
-	min-width: 300px;
 }
 .reviewBar {
-	width: 80px;
+	min-width: 80px;
 	font: bold 26px Arial;
 	color: #333;
 	display: inline-block;
-	margin-left: 10px;
-	margin-bottom: 4px;
-	margin-top: 4px;
+	margin: 6px;
 }
 .reviewNumber {
-	width: 100px;
 	font: normal 12px Arial;
 	color: #cfcfcf;
 	display: inline-block;
-	text-align: left;
 }
 
 /*price row*/
 .price {
-	min-width: 300px;
 }
 .currentPrice {
-	width: 90px;
+	min-width: 90px;
 	font: bold 20px Arial;
 	color: #c2484e;
 	display: inline-block;
@@ -44,13 +37,13 @@
 	margin-top: 4px;
 }
 .retailPrice {
-	width: 70px;
+	min-width: 70px;
 	font: normal 12px Arial;
 	color: #cfcfcf;
 	display: inline-block;
 }
 .discount {
-	width: 100px;
+	min-width: 100px;
 	font: bold 14px Arial;
 	color: #cfcfcf;
 	display: inline-block;
@@ -66,8 +59,9 @@
 /*colour row*/
 #colourLabel {
 	font: bold 12px Arial;
-	margin-left: 4px;
-	margin-top: 26px;
+	margin: 6px;
+	margin-top: 20px;
+	display: inline-block;
 }
 #colour {
 	font: normal 12px Arial;
@@ -75,18 +69,21 @@
 }
 
 /*buttons */
-button:focus {outline: 0;}
+button:focus {
+	outline: 0;
+}
+
 .button {
-	display: inline-block;
 	cursor: pointer;
 	border-radius: 50%;
 	border-style: solid;
-	border-width: 2px;
+	border-width: 3px;
 	border-color: white;
 	width: 30px;
 	height: 30px;
 	margin-left: 10px;
 	margin-top: 10px; 
+	margin-bottom: 2px;
 }
 
 .button#roundButton1 {
@@ -97,32 +94,57 @@ button:focus {outline: 0;}
 	background-color: yellow;
 }
 
-.addToCart { 
-	display: inline-block;
+.button#roundButton3 {
+	background-color: blue;
+}
+
+.button#roundButton4 {
+	background-color: red;
+}
+
+.button#roundButton5 {
+	background-color: orange;
+}
+
+.button#roundButton6 {
+	background-color: purple;
+}
+
+.addToCart {
 	font: normal 16px Arial;
+	margin-bottom: 20px;
 }
 
 .addToCart#numberColour {
+	display: inline-block;
 	border: solid;
 	border-width: 1px;
-	border-radius: 20px;
+	border-radius: 25px;
 	background-color: white;
 	color: black;
-	width:50px;
-	height: 50px;
-	margin: 20px;
-	line-height: 50px;
+	width:55px;
+	height: 40px;
+	margin: 15px;
+	margin-top: 8px;
+	margin-left: 3px;
+	line-height: 44px;
 	text-align: center;
-	vertical-align: middle;
 }
 .addToCart#addToCartButton {
+	display: inline-block;
+	cursor: pointer;
 	border: none;
 	border-radius: 25px 25px 25px 25px;
 	background-color: black;
 	color: white;
-	width: 300px;
-	height: 50px;
-	margin: 20px;
+	min-width: 300px;
+	min-height: 50px;
+}
+
+.line {
+	border-style:solid;
+	border-color: grey;
+	margin: 2px;
 }
 
 /*modal popup*/
@@ -162,6 +184,7 @@ button:focus {outline: 0;}
 }
 
 .plusminus {
+	cursor: pointer;
 	width: 50px;
 	height: 50px;
 	margin: 10px;
@@ -183,6 +206,7 @@ button:focus {outline: 0;}
 	font: normal 40px Arial;
 }
 .choice {
+	cursor: pointer;
 	width: 80px;
 	height:40px;
 	margin:10px;
@@ -204,5 +228,11 @@ button:focus {outline: 0;}
 #agree {
 	background-color: #9dff82;
 	border-color: #67cc4b;
+}
+
+#selectedColours {
+	margin: 10px;
+	min-width: 300px;
+	min-height: 100px;
 }
 
