@@ -10,7 +10,6 @@
 
 <body>
 
-
 	<div class="infoHeader">
 		<div class="product">
 			<h1 class="productName">
@@ -45,34 +44,52 @@
 
 		<div id="colourLabel">
 			COLOR:
-			<div id="colour">
-				 Electric Red
-			</div>
+			<div id="colour"></div>
 		</div>
 
 		<div class="buttons">
-			<button class="button" id="roundButton1" -data-name="green" -data-price="10" onclick="buttonSelect(this.id)">
-			</button>
-
-			<button class="button" id="roundButton2" -data-name="yellow" -data-price="20" onclick="buttonSelect(this.id)">
-			</button>
+			<button class="button" id="roundButton1" -data-name="green" -data-price="10" onclick="buttonSelect(this.id)"></button>
+			<button class="button" id="roundButton2" -data-name="yellow" -data-price="20" onclick="buttonSelect(this.id)"></button>
 		</div>
 
 		<div class="addToCart">
-			<p class="addToCart" id="numberColour"> 
-				0
-			</p>
-			<button class="addToCart" id="addToCartButton" onclick="addToCart()">
-				Add to Cart
+			<p class="addToCart" id="numberColour">0</p>
+			<button class="addToCart" id="addToCartButton" onclick="addToCart()">Add to Cart</button>
+		</div>
+
+		<div id="addColours" class = "popup">
+
+		<div class = "popup-content">
+			<p class="popup-text">Please add the quantity of the item you have selected.</p>
+			<div class = "incdec">
+				<p id="colourName"></p>
+				<button class = "plusminus" onclick="decrement()">-</button>
+				<p id="duplicateColour">0</p>
+				<button class = "plusminus" onclick="increment()">+</button>
+			</div>
+			<button class="choice" id="agree" onclick="closeAddToCart()">
+				<p class="popup-choice">Agree</p>
 			</button>
+			<button class="choice" id="cancel" onclick="closeAddToCart()">
+				<p class="popup-choice">Cancel</p>
+			</button>
+			
 		</div>
 	</div>
+
+	
 
 	<script type="text/javascript">
 		var selectedButton = document.getElementById("roundButton1");
 		
 		var lastSelectedButton = selectedButton;
 		var ringColour = "black";
+
+		var popup = document.getElementById("addColours");
+		var colourName = document.getElementById("colourName");
+		var duplicateColour = document.getElementById("duplicateColour");
+
+		var itemsInCart = false;
 
 		function buttonSelect(currentID) {
 			lastSelectedButton = selectedButton;
@@ -85,7 +102,20 @@
 		}
 
 		function addToCart() {
-			alert(selectedButton.id);
+			popup.style.display = "block";
+			colourName.innerHTML = selectedButton.getAttribute("-data-name");
+		}
+
+		function closeAddToCart() {
+			popup.style.display = "none";
+		}
+
+		function increment() {
+			duplicateColour.innerHTML = parseInt(duplicateColour.innerHTML, 10)+1;
+		}
+
+		function decrement() {
+			duplicateColour.innerHTML = parseInt(duplicateColour.innerHTML, 10) > 0 ? parseInt(duplicateColour.innerHTML, 10)-1 : 0;
 		}
 
 	</script>

@@ -1,5 +1,5 @@
 .infoHeader {
-	text-align: left;
+	text-align: center;
 	margin: 8px;
 }
 .product {
@@ -13,7 +13,6 @@
 /*review row*/
 .reviewHeader {
 	min-width: 300px;
-	text-align: left;
 }
 .reviewBar {
 	width: 80px;
@@ -35,7 +34,6 @@
 /*price row*/
 .price {
 	min-width: 300px;
-	text-align: left;
 }
 .currentPrice {
 	width: 90px;
@@ -77,6 +75,7 @@
 }
 
 /*buttons */
+button:focus {outline: 0;}
 .button {
 	display: inline-block;
 	cursor: pointer;
@@ -124,5 +123,86 @@
 	width: 300px;
 	height: 50px;
 	margin: 20px;
+}
+
+/*modal popup*/
+.popup {
+	text-align: center;
+	display:none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+.popup-content {
+	display: inline-block;
+	background-color: white;
+	margin: 20px;
+	margin-top: 5%;
+	margin-bottom: 20%;
+	padding: 20px;
+	border: 1px solid black;
+	border-radius: 5px;
+	min-width: 300px;
+	min-height: 200px;
+}
+
+.popup-text {
+	font: normal 16px Arial;
+}
+
+.incdec {
+	width: 250px;
+	text-align: right;
+}
+
+.plusminus {
+	width: 50px;
+	height: 50px;
+	margin: 10px;
+	border: 1px solid black;
+	border-radius: 50%;
+	font: normal 40px Arial;
+	background-color: black;
+	color: white;
+}
+
+#colourName {
+	display: inline;
+	margin: 5px;
+	font: normal 20px Arial;
+}
+
+#duplicateColour {
+	display: inline-block;
+	font: normal 40px Arial;
+}
+.choice {
+	width: 80px;
+	height:40px;
+	margin:10px;
+	border: 2px solid #888;
+	border-radius: 5px;
+}
+
+.popup-choice {
+	line-height: 2px;
+	text-align:center;
+	vertical-align: middle;
+}
+
+#cancel {
+	background-color: #ff9191;
+	border-color: #ba4141;
+}
+
+#agree {
+	background-color: #9dff82;
+	border-color: #67cc4b;
 }
 
