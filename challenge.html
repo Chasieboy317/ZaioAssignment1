@@ -9,26 +9,7 @@
 </head>
 
 <body>
-	<script type="text/javascript">
-		var selectedButton = document.getElementById("ElectridRed");
 
-		function buttonSelect(currentID) {
-			var buttons = document.getElementsByClassName("button");
-			for (var i=0; i<buttons.length; i++) {
-				if (buttons[i].id == currentID) {
-					selectedButton=buttons[i];
-					buttons[i].style.borderColor = "black";
-					document.getElementById("colour").innerHTML = buttons[i].getAttribute("-data-name");
-				}
-				else {buttons[i].style.borderColor = "white";}
-			}
-		}
-
-		function addToCart() {
-			alert(selectedButton.id);
-		}
-
-	</script>
 
 	<div class="infoHeader">
 		<div class="product">
@@ -87,6 +68,27 @@
 		</div>
 	</div>
 
+	<script type="text/javascript">
+		var selectedButton = document.getElementById("roundButton1");
+		
+		var lastSelectedButton = selectedButton;
+		var ringColour = "black";
+
+		function buttonSelect(currentID) {
+			lastSelectedButton = selectedButton;
+			selectedButton = document.getElementById(currentID);
+
+			lastSelectedButton.style.borderColor = "white";
+			selectedButton.style.borderColor = ringColour;
+
+			document.getElementById("colour").innerHTML = selectedButton.getAttribute("-data-name");
+		}
+
+		function addToCart() {
+			alert(selectedButton.id);
+		}
+
+	</script>
 </body>
 
 </html>
