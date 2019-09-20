@@ -1,7 +1,9 @@
 .infoHeader {
-	width: 550px;
+	display: inline-block;
+	text-align: left;
 }
 .product {
+	width: auto;
 }
 .productName {
 	color: #333333;
@@ -11,6 +13,7 @@
 
 /*review row*/
 .reviewHeader {
+	width: auto;
 }
 .reviewBar {
 	min-width: 80px;
@@ -27,6 +30,7 @@
 
 /*price row*/
 .price {
+	width: auto;
 }
 .currentPrice {
 	min-width: 90px;
@@ -110,6 +114,46 @@ button:focus {
 	background-color: purple;
 }
 
+.button#roundButton7 {
+	background-color: BlanchedAlmond;
+}
+
+.button#roundButton8 {
+	background-color: SandyBrown;
+}
+
+.button#roundButton9 {
+	background-color: Maroon;
+}
+
+.button#roundButton10 {
+	background-color: OrangeRed;
+}
+
+.button#roundButton11 {
+	background-color: Coral;
+}
+
+.button#roundButton12 {
+	background-color: IndianRed;
+}
+
+.button#roundButton13 {
+	background-color: Crimson;
+}
+
+.button#roundButton14 {
+	background-color: DarkSlateGrey;
+}
+
+.button#roundButton15 {
+	background-color: MediumOrchid;
+}
+
+.button#roundButton16 {
+	background-color: Khaki;
+}
+
 .addToCart {
 	font: normal 16px Arial;
 	margin-bottom: 20px;
@@ -134,7 +178,7 @@ button:focus {
 	display: inline-block;
 	cursor: pointer;
 	border: none;
-	border-radius: 25px 25px 25px 25px;
+	border-radius: 25px;
 	background-color: black;
 	color: white;
 	min-width: 300px;
@@ -145,6 +189,9 @@ button:focus {
 	border-style:solid;
 	border-color: grey;
 	margin: 2px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	width: 70%;
 }
 
 /*modal popup*/
@@ -159,57 +206,61 @@ button:focus {
 	height: 100%;
 	overflow: auto;
 	background-color: rgba(0, 0, 0, 0.1);
+	padding-top: 150px;
 }
 
 .popup-content {
 	display: inline-block;
+	text-align:right;
 	background-color: white;
-	margin: 20px;
-	margin-top: 5%;
-	margin-bottom: 20%;
-	padding: 20px;
 	border: 1px solid black;
 	border-radius: 5px;
-	min-width: 300px;
-	min-height: 200px;
+	width: auto;
+	height: auto;
 }
 
 .popup-text {
-	font: normal 16px Arial;
+	font: normal 14px Arial;
+	text-align: center;
+	margin: 10px;
 }
 
 .incdec {
-	width: 250px;
-	text-align: right;
+	display: inline-block;
+	margin-right: 10px;
 }
 
 .plusminus {
+	display: inline-block;
 	cursor: pointer;
-	width: 50px;
-	height: 50px;
-	margin: 10px;
+	width: 60px;
+	height: 60px;
+	margin: 20px;
 	border: 1px solid black;
 	border-radius: 50%;
-	font: normal 40px Arial;
+	font: normal 60px Arial;
 	background-color: black;
 	color: white;
+	line-height: 5px;
 }
 
 #colourName {
-	display: inline;
+	display: inline-block;
 	margin: 5px;
-	font: normal 20px Arial;
+	font: bold 14px Arial;
 }
 
 #duplicateColour {
 	display: inline-block;
-	font: normal 40px Arial;
+	font: bold 40px Arial;
+
 }
 .choice {
+	text-align:right;
 	cursor: pointer;
-	width: 80px;
-	height:40px;
-	margin:10px;
+	width: 70px;
+	height:35px;
+	margin:5px;
 	border: 2px solid #888;
 	border-radius: 5px;
 }
@@ -232,7 +283,6 @@ button:focus {
 
 #selectedColours {
 	margin: 10px;
-	min-width: 300px;
-	min-height: 100px;
+	width: 70%;
 }
 
