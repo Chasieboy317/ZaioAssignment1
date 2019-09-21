@@ -1,55 +1,37 @@
 <!DOCTYPE html>
-<html>
-
+<html lang = "en">
 <head>
-	<meta name=”viewport” content=”width=device-width, initial-scale=1″>
-	<title>
-		HICKIES Originals
-	</title>
+	<meta charset = "UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="challenge.css">
+	<title>HICKIES Originals</title>
 </head>
 
 <body>
-	<div style="width:100%; height:100%; text-align:center;">
+	<div style="">
 
-		<div class="infoHeader">
-			<div class="product">
-				<h1 class="productName">
-				HICKIES Originals
-				</h1>
-			</div>
+		<div class="content-container">
+			<h1 class="productName">HICKIES Originals</h1>
 
 			<div class = "reviewHeader"> 
-				<div class = "reviewBar">
-				⭑⭑⭑⭑⭑
-				</div>
-				<div class = "reviewNumber">
-				1,293 reviews	
-				</div>
+				<span class = "reviewBar">★★★★★</span>
+				<span class = "reviewNumber">1,293 reviews</span>
 			</div>
 
 			<div class = "price">
-				<div class = "currentPrice">
-				$14.99
-				</div>
-				<div class = "retailPrice">
-				$17.99
-				</div>
-				<div class = "discount">
-				25% OFF
-				</div>
+				<span class = "currentPrice">$14.99</span>
+				<span class = "retailPrice">$17.99</span>
+				<span class = "discount">25% OFF</span>
 			</div>
 
-			<div class = "exclusive">
-				ONLINE EXCLUSIVE
-			</div>
+			<h3 class = "exclusive">ONLINE EXCLUSIVE</h3>
 
 			<div id="colourLabel">
 				COLOR:
-				<div id="colour"></div>
+				<span id="colour"></span>
 			</div>
 
-			<div style="width: 70%;">
+			<div>
 				<button class="button" id="roundButton1" -data-name="Green" onclick="ButtonSelect(this.id)"></button>
 				<button class="button" id="roundButton2" -data-name="Yellow" onclick="ButtonSelect(this.id)"></button>
 				<button class="button" id="roundButton3" -data-name="Blue" onclick="ButtonSelect(this.id)"></button>
@@ -66,13 +48,14 @@
 				<button class="button" id="roundButton14" -data-name="Dark Slate Gray" onclick="ButtonSelect(this.id)"></button>
 				<button class="button" id="roundButton15" -data-name="Medium Orchid" onclick="ButtonSelect(this.id)"></button>
 				<button class="button" id="roundButton16" -data-name="Khaki" onclick="ButtonSelect(this.id)"></button>
-				<p style="font: bold 11px Arial; margin:15px">Size Guide</p>
 			</div>
 
-			<div class="addToCart">
-				<p style="font: bold 11px Arial; margin: 15px;">Your Custom Fit</p>
-				<p class="addToCart" id="numberColour">0</p>
-				<button class="addToCart" id="addToCartButton" onclick="AddToCart()">Add to Cart</button>
+			<h4 style="font: bold 11px Arial; margin:15px">Size Guide</h4>
+			<h4 style="font: bold 11px Arial; margin: 15px;">Your Custom Fit</h4>
+
+			<div class="addToCart">	
+				<button id="numberColour">0</button>
+				<button id="addToCartButton" onclick="AddToCart()">Add to Cart</button>
 			</div>
 
 			<hr class="line"> </hr>
@@ -148,12 +131,6 @@
 		}
 
 		function Checkout() {
-			var copyColour = selectedButton.cloneNode(true); 
-			copyColour.style.border = "none";
-			//copyColour.onclick = null; //For some reason null assignment of the onclick function doesn't remove it's functionality ???
-			for (var i=0; i<duplicateColourNum; i++) {
-				selectedColours.appendChild(copyColour.cloneNode(true)); //make a copy of the selected colour and add it to the list of colours
-			}
 			Reset();
 		}
 
@@ -170,10 +147,17 @@
 			addToCartButton.innerHTML = "Checkout Now";
 			numberColour.innerHTML = duplicateColourNum;
 			addToCartButton.onclick = function() {Checkout();}
+			var copyColour = selectedButton.cloneNode(true); 
+			copyColour.style.border = "none";
+			//copyColour.onclick = null; //For some reason null assignment of the onclick function doesn't remove it's functionality ???
+			for (var i=0; i<duplicateColourNum; i++) {
+				selectedColours.appendChild(copyColour.cloneNode(true)); //make a copy of the selected colour and add it to the list of colours
+			}
 		}
 
 		function Cancel() {
 			popup.style.display = "none";
+			Reset();
 		}
 
 		//method to increment the number of colours which will be added to the cart in the modal

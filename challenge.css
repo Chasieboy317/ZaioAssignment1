@@ -1,75 +1,66 @@
-.infoHeader {
-	display: inline-block;
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+.content-container {
 	text-align: left;
+	width: 95%;
+	margin: auto;
 }
-.product {
-	width: auto;
-}
+
 .productName {
 	color: #333333;
 	font: bold 30px Arial;
-	margin-bottom: 4px;
+	margin: 10px 0px;
 }
 
 /*review row*/
 .reviewHeader {
-	width: auto;
+	font: normal 12px Arial;
+	margin: 10px 5px;
 }
 .reviewBar {
-	min-width: 80px;
-	font: bold 26px Arial;
 	color: #333;
-	display: inline-block;
-	margin: 6px;
+	font-size: 16px;
 }
 .reviewNumber {
-	font: normal 12px Arial;
 	color: #cfcfcf;
-	display: inline-block;
+	margin-left: 15px;
 }
 
 /*price row*/
 .price {
-	width: auto;
+	margin: 10px 0px;
 }
 .currentPrice {
-	min-width: 90px;
 	font: bold 20px Arial;
 	color: #c2484e;
-	display: inline-block;
-	margin-bottom: 4px;
-	margin-top: 4px;
 }
 .retailPrice {
-	min-width: 70px;
 	font: normal 12px Arial;
 	color: #cfcfcf;
-	display: inline-block;
+	margin-left: 20px;
 }
 .discount {
-	min-width: 100px;
 	font: bold 14px Arial;
 	color: #cfcfcf;
-	display: inline-block;
+	margin-left: 20px;
 }
 
 .exclusive {
-	margin-left: 10px;
-	margin-bottom: 4px;
-	margin-top: 12px;
+	margin: 10px 5px;
 	font: normal 14px Arial;
 }
 
 /*colour row*/
 #colourLabel {
 	font: bold 12px Arial;
-	margin: 6px;
-	margin-top: 20px;
-	display: inline-block;
+	margin: 20px 0px;
 }
 #colour {
 	font: normal 12px Arial;
-	display: inline-block;
 }
 
 /*buttons */
@@ -85,9 +76,7 @@ button:focus {
 	border-color: white;
 	width: 30px;
 	height: 30px;
-	margin-left: 10px;
-	margin-top: 10px; 
-	margin-bottom: 2px;
+	margin: 10px 5px;
 }
 
 .button#roundButton1 {
@@ -155,43 +144,38 @@ button:focus {
 }
 
 .addToCart {
-	font: normal 16px Arial;
-	margin-bottom: 20px;
+	margin: 10px 0px;
+	display: flex;
 }
 
-.addToCart#numberColour {
-	display: inline-block;
+#numberColour {
+	font: normal 16px Arial;
 	border: solid;
 	border-width: 1px;
 	border-radius: 25px;
 	background-color: white;
 	color: black;
+
 	width:55px;
 	height: 40px;
-	margin: 15px;
-	margin-top: 8px;
-	margin-left: 3px;
-	line-height: 44px;
-	text-align: center;
+	margin: 0px 10px;
+	line-height: 40px;
 }
-.addToCart#addToCartButton {
-	display: inline-block;
+#addToCartButton {
+	font: normal 16px Arial;
 	cursor: pointer;
 	border: none;
 	border-radius: 25px;
 	background-color: black;
 	color: white;
-	min-width: 300px;
+	min-width: 280px;
 	min-height: 50px;
 }
 
 .line {
 	border-style:solid;
 	border-color: grey;
-	margin: 2px;
-	margin-top: 20px;
-	margin-bottom: 20px;
-	width: 70%;
+	margin: 20px 0px;
 }
 
 /*modal popup*/
@@ -202,11 +186,11 @@ button:focus {
 	z-index: 1;
 	left: 0;
 	top: 0;
-	width: 100%;
-	height: 100%;
+	width: 100vw;
+	height: 100vh;
 	overflow: auto;
 	background-color: rgba(0, 0, 0, 0.1);
-	padding-top: 150px;
+	padding-top: 13vh;
 }
 
 .popup-content {
@@ -215,8 +199,6 @@ button:focus {
 	background-color: white;
 	border: 1px solid black;
 	border-radius: 5px;
-	width: auto;
-	height: auto;
 }
 
 .popup-text {
@@ -282,7 +264,16 @@ button:focus {
 }
 
 #selectedColours {
-	margin: 10px;
-	width: 70%;
+	margin: 10px 5px;
+}
+
+@media only screen and (max-width: 370px) {
+
+	#addToCartButton {
+		min-width: 200px;
+		min-height: 40px;
+		margin-left: 10px;
+	}
+
 }
 
