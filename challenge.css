@@ -275,5 +275,35 @@ button:focus {
 		margin-left: 10px;
 	}
 
+	.plusminus {
+		display: inline-block;
+		cursor: pointer;
+		width: 40px;
+		height: 40px;
+		margin: 10px;
+		border: 1px solid black;
+		border-radius: 50%;
+		font: normal 40px Arial;
+		background-color: black;
+		color: white;
+		line-height: 5px;
+	}
+
+	.popup-content {
+		width: 90%;
+		margin:auto;
+		display: inline-block;
+		text-align:right;
+		background-color: white;
+		border: 1px solid black;
+		border-radius: 5px;
+	}
+
+	#duplicateColour {
+	display: inline-block;
+	font: bold 20px Arial;
+
+}
+
 }
 
